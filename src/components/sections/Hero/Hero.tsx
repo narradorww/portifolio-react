@@ -1,9 +1,7 @@
-// src/components/sections/Hero/Hero.tsx
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Box, Typography } from '@mui/material';
 import { keyframes } from '@mui/system';
 
-// Importando as imagens
 import avatarImage from '../../../assets/images/avatar.jpeg';
 import devImage from '../../../assets/images/dev.png';
 import dungeonMasterImage from '../../../assets/images/dungeon-master.png';
@@ -23,14 +21,14 @@ const facets: Facet[] = [
   {
     id: 'dev',
     leftTitle: null,
-    rightTitle: 'Developer',
+    rightTitle: 'Desenvolvimento de Software',
     leftDescription: 'Arquitetando soluções elegantes e eficientes.',
     rightDescription: 'Desenvolvendo soluções criativas com código.',
     image: devImage,
   },
   {
     id: 'dungeon-master',
-    leftTitle: 'Mestre de',
+    leftTitle: null,
     rightTitle: 'RPG',
     leftDescription: 'Criando mundos fantásticos e histórias memoráveis.',
     rightDescription: 'Guiando aventureiros em jornadas épicas.',
@@ -38,40 +36,69 @@ const facets: Facet[] = [
   },
   {
     id: 'forest-farmer',
-    leftTitle: 'Forest',
-    rightTitle: 'Farmer',
+    leftTitle: null,
+    rightTitle: 'Agrofloresta',
     leftDescription: 'Cultivando consciência ambiental.',
     rightDescription: 'Promovendo sustentabilidade e conexão com a natureza.',
     image: forestFarmerImage,
   },
   {
     id: 'team-leader',
-    leftTitle: 'Team',
-    rightTitle: 'Leader',
+    leftTitle: null,
+    rightTitle: 'Liderança',
     leftDescription: 'Guiando equipes rumo ao sucesso.',
     rightDescription: 'Liderando projetos inovadores com empatia e visão.',
     image: teamLeaderImage,
   }
 ];
 
-// Animação orbital levemente inclinada
 const orbitAnimation = keyframes`
-  from {
-    transform: rotate(0deg) translateX(300px) rotate(0deg);
+  0% {
+    left: 0%;
+    z-index: 1;
+    transform: translate(0%, -50%) scale(0.7);
+    color: #000000;
   }
-  to {
-    transform: rotate(-360deg) translateX(300px) rotate(360deg);
+  
+  25% {
+    transform: translate(-100%, -50%) scale(0.3);
+    color: #333333;
   }
-`;
-
-const fadeIn = keyframes`
-  from {
-    opacity: 0;
-    transform: translateY(20px);
+  
+  45% {
+    color: #666666;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  
+  50% {
+    left: 100%;
+    z-index: 1;
+    transform: translate(-100%, -50%) scale(0.3);
+    color: #888888;
+  }
+  
+  50.001% {
+    z-index: 3;
+    color: #999999;
+  }
+  
+  65% {
+    color: #CCCCCC;
+  }
+  
+  75% {
+    transform: translate(-100%, -50%) scale(1);
+    color: #E6E6E6;
+  }
+  
+  85% {
+    color: #666666;
+  }
+  
+  100% {
+    left: 0%;
+    z-index: 3;
+    transform: translate(0%, -50%) scale(0.7);
+    color: #000000;
   }
 `;
 
@@ -99,10 +126,90 @@ const slideInRight = keyframes`
 
 const Hero: React.FC = () => {
   const [selectedFacet, setSelectedFacet] = useState<Facet | null>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [rotation, setRotation] = useState(0);
+  const [velocity, setVelocity] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const startAngleRef = useRef(0);
+  const lastAngleRef = useRef(0);
+  const lastTimeRef = useRef(Date.now());
+  const animationFrameRef = useRef<number>();
 
-  const handleFacetClick = (facet: Facet) => {
-    setSelectedFacet(facet);
+  const calculateAngle = (clientX: number, clientY: number): number => {
+    if (!containerRef.current) return 0;
+    
+    const rect = containerRef.current.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+    
+    return Math.atan2(clientY - centerY, clientX - centerX) * (180 / Math.PI);
   };
+
+  const handleDragStart = (e: React.MouseEvent | React.TouchEvent) => {
+    setIsDragging(true);
+    const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
+    const clientY = 'touches' in e ? e.touches[0].clientY : e.clientY;
+    
+    startAngleRef.current = calculateAngle(clientX, clientY);
+    lastAngleRef.current = startAngleRef.current;
+    lastTimeRef.current = Date.now();
+    cancelAnimationFrame(animationFrameRef.current!);
+  };
+
+  const handleDragMove = (e: React.MouseEvent | React.TouchEvent) => {
+    if (!isDragging) return;
+    
+    const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
+    const clientY = 'touches' in e ? e.touches[0].clientY : e.clientY;
+    
+    const currentAngle = calculateAngle(clientX, clientY);
+    const angleDiff = currentAngle - lastAngleRef.current;
+    const currentTime = Date.now();
+    const timeDiff = currentTime - lastTimeRef.current;
+    
+    // Calcula a velocidade do movimento
+    const newVelocity = angleDiff / timeDiff;
+    setVelocity(newVelocity);
+    
+    setRotation(prev => prev + angleDiff);
+    lastAngleRef.current = currentAngle;
+    lastTimeRef.current = currentTime;
+  };
+
+  const handleDragEnd = () => {
+    setIsDragging(false);
+    
+    // Inicia a animação de inércia
+    const animate = () => {
+      setVelocity(prev => prev * 0.95); // Decaimento da velocidade
+      setRotation(prev => prev + velocity * 16); // 16ms é aproximadamente um frame a 60fps
+      
+      if (Math.abs(velocity) > 0.001) {
+        animationFrameRef.current = requestAnimationFrame(animate);
+      }
+    };
+    
+    if (Math.abs(velocity) > 0.01) {
+      animationFrameRef.current = requestAnimationFrame(animate);
+    }
+  };
+
+  useEffect(() => {
+    const handleGlobalEnd = () => {
+      if (isDragging) {
+        handleDragEnd();
+      }
+    };
+
+    window.addEventListener('mouseup', handleGlobalEnd);
+    window.addEventListener('touchend', handleGlobalEnd);
+
+    return () => {
+      window.removeEventListener('mouseup', handleGlobalEnd);
+      window.removeEventListener('touchend', handleGlobalEnd);
+      cancelAnimationFrame(animationFrameRef.current!);
+    };
+  }, [isDragging, velocity]);
 
   return (
     <Box
@@ -115,10 +222,16 @@ const Hero: React.FC = () => {
         justifyContent: 'center',
         bgcolor: '#D9D9D9',
         overflow: 'hidden',
-        perspective: '1000px',
       }}
     >
       <Box
+        ref={containerRef}
+        onMouseDown={handleDragStart}
+        onMouseMove={handleDragMove}
+        onMouseUp={handleDragEnd}
+        onTouchStart={handleDragStart}
+        onTouchMove={handleDragMove}
+        onTouchEnd={handleDragEnd}
         sx={{
           position: 'relative',
           width: '800px',
@@ -126,45 +239,77 @@ const Hero: React.FC = () => {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          transformStyle: 'preserve-3d',
-          transform: 'rotateX(5deg)',
+          cursor: isDragging ? 'grabbing' : 'grab',
+          touchAction: 'none', // Previne scroll em dispositivos touch
         }}
       >
-        {/* Palavras orbitando */}
+        {/* Avatar central */}
+        <Box
+          sx={{
+            position: 'absolute',
+            width: 320,
+            height: 320,
+            borderRadius: '50%',
+            overflow: 'hidden',
+            border: '3px solid #000000',
+            boxShadow: '0 0 30px rgba(0, 0, 0, 0.2)',
+            bgcolor: '#000000',
+            zIndex: 2,
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            display: selectedFacet ? 'none' : 'block',
+          }}
+        >
+          <img
+            src={avatarImage}
+            alt="Profile"
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+            }}
+          />
+        </Box>
+
+        {/* Facets orbitando */}
         {!selectedFacet && facets.map((facet, index) => (
           <Typography
             key={facet.id}
-            onClick={() => handleFacetClick(facet)}
+            onClick={() => !isDragging && setSelectedFacet(facet)}
             sx={{
               position: 'absolute',
-              left: '50%',
-              top: '50%',
-              color: '#000000',
-              cursor: 'pointer',
+              top: '55%',
+              height: '50px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: isDragging ? 'grabbing' : 'pointer',
               fontFamily: 'Michroma, sans-serif',
-              fontSize: '1.2rem',
-              padding: '10px',
-              whiteSpace: 'nowrap',
-              transformOrigin: '0 0',
-              animation: `${orbitAnimation} 20s linear infinite`,
+              fontSize: '1.8rem',
+              fontWeight: 'bold',
+              padding: '10px 20px',
+              borderRadius: '25px',
+              animation: `${orbitAnimation} 16s infinite ease-in-out`,
               animationDelay: `${-index * (20 / facets.length)}s`,
-              transform: 'translate(-50%, -50%)',
+              animationPlayState: isDragging ? 'paused' : 'running',
+              transform: isDragging ? `rotate(${rotation}deg)` : undefined,
+              transition: isDragging ? 'none' : 'all 0.3s ease',
+              userSelect: 'none',
+              '-webkit-user-select': 'none',
               '&:hover': {
-                textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)',
-                scale: 1.1,
-              },
-              '& > span': {
-                display: 'inline-block',
-                transform: 'rotateX(-5deg)',
+                textShadow: '0 0 10px rgba(255, 255, 255, 0.5)',
+                transform: 'scale(1.1)',
+                animationPlayState: 'paused'
               }
             }}
           >
-            <span>{facet.rightTitle || facet.leftTitle}</span>
+            {facet.rightTitle || facet.leftTitle}
           </Typography>
         ))}
 
-        {/* Conteúdo quando uma faceta está selecionada */}
-        {selectedFacet ? (
+        {/* Conteúdo selecionado */}
+        {selectedFacet && (
           <Box
             sx={{
               width: '100%',
@@ -207,7 +352,7 @@ const Hero: React.FC = () => {
               </Typography>
             </Box>
 
-            {/* Container da imagem circular - Agora clicável */}
+            {/* Imagem central */}
             <Box
               onClick={() => setSelectedFacet(null)}
               sx={{
@@ -224,46 +369,23 @@ const Hero: React.FC = () => {
             >
               <Box
                 sx={{
-                  position: 'absolute',
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                  bottom: 0,
-                  borderRadius: '50%',
-                  border: '3px solid #000000',
-                  boxShadow: '0 0 30px rgba(0, 0, 0, 0.2)',
-                }}
-              />
-              <Box
-                sx={{
-                  position: 'relative',
                   width: '100%',
                   height: '100%',
                   borderRadius: '50%',
                   overflow: 'hidden',
+                  border: '3px solid #000000',
+                  boxShadow: '0 0 30px rgba(0, 0, 0, 0.2)',
                 }}
               >
-                <Box
-                  sx={{
-                    position: 'absolute',
-                    top: '50%',
-                    left: '50%',
-                    transform: 'translate(-50%, -50%)',
+                <img
+                  src={selectedFacet.image}
+                  alt={selectedFacet.rightTitle || selectedFacet.leftTitle || ''}
+                  style={{
                     width: '100%',
                     height: '100%',
+                    objectFit: 'cover',
                   }}
-                >
-                  <img
-                    src={selectedFacet.image}
-                    alt={selectedFacet.rightTitle || selectedFacet.leftTitle || ''}
-                    style={{
-                      width: '100%',
-                      height: '100%',
-                      objectFit: 'cover',
-                      transition: 'transform 0.5s ease',
-                    }}
-                  />
-                </Box>
+                />
               </Box>
             </Box>
 
@@ -277,7 +399,6 @@ const Hero: React.FC = () => {
             >
               {selectedFacet.rightTitle && (
                 <Typography
-                  variant="h2"
                   sx={{
                     fontFamily: 'Michroma, sans-serif',
                     fontSize: '2rem',
@@ -297,41 +418,6 @@ const Hero: React.FC = () => {
               >
                 {selectedFacet.rightDescription}
               </Typography>
-            </Box>
-          </Box>
-        ) : (
-          // Avatar inicial
-          <Box
-            sx={{
-              position: 'relative',
-              width: 320,
-              height: 320,
-              borderRadius: '50%',
-              overflow: 'hidden',
-              border: '3px solid #000000',
-              boxShadow: '0 0 30px rgba(0, 0, 0, 0.2)',
-              zIndex: 2,
-            }}
-          >
-            <Box
-              sx={{
-                position: 'absolute',
-                top: '50%',
-                left: '50%',
-                transform: 'translate(-50%, -50%)',
-                width: '100%',
-                height: '100%',
-              }}
-            >
-              <img
-                src={avatarImage}
-                alt="Profile"
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'cover',
-                }}
-              />
             </Box>
           </Box>
         )}
