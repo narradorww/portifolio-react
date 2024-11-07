@@ -1,0 +1,51 @@
+{
+    "nav": {
+      "links": {
+        "about": "SOBRE",
+        "books": "LIVROS",
+        "blog": "BLOG",
+        "portfolio": "PORTFÓLIO",
+        "contact": "CONTATO"
+      }
+    },
+    "language": {
+      "select": "Selecione o idioma",
+      "pt": "Português",
+      "en": "Inglês",
+      "fr": "Francês"
+    },
+    "hero": {
+      "greeting": "Olá, eu sou Rodrigo Alexandre",
+      "role": "Desenvolvedor Full Stack e Líder de Equipe",
+      "description": "Apaixonado por criar soluções digitais inovadoras e experiências únicas na web e mobile, com foco em sustentabilidade e tecnologia.",
+      "avatar": {
+        "alt": "Foto de perfil de Rodrigo Alexandre"
+      },
+      "facets": {
+        "dev": {
+          "leftTitle": "Desenvolvimento de Software",
+          "rightTitle": "MERN Stack & Mobile",
+          "leftDescription": "Especializado em desenvolvimento web e mobile full stack com foco em tecnologias modernas, como React, Node.js e MongoDB.",
+          "rightDescription": "Criando soluções inovadoras e práticas, desde a prototipação até a implementação final."
+        },
+        "dungeonMaster": {
+          "leftTitle": "Mestre de RPG",
+          "rightTitle": "Criador de Mundos",
+          "leftDescription": "Narrando histórias em universos distópicos e explorando o impacto da tecnologia e humanidade em mundos fantásticos.",
+          "rightDescription": "Desenvolvendo habilidades de liderança, narrativa e criação colaborativa através do RPG."
+        },
+        "forestFarmer": {
+          "leftTitle": "Agrofloresteiro",
+          "rightTitle": "Sustentabilidade e Natureza",
+          "leftDescription": "Cultivando alimentos orgânicos e sustentáveis e aplicando práticas de sustentabilidade.",
+          "rightDescription": "Unindo tecnologia e natureza em prol de um futuro mais sustentável e equilibrado."
+        },
+        "teamLeader": {
+          "leftTitle": "Líder de Equipe",
+          "rightTitle": "Desenvolvimento Colaborativo",
+          "leftDescription": "Guiando times de desenvolvedores em projetos desafiadores, promovendo colaboração e melhoria contínua.",
+          "rightDescription": "Liderando uma equipe de desenvolvedores e garantindo entregas de alta qualidade e valor."
+        }
+      }
+    }
+  }

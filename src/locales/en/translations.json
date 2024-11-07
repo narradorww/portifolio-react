@@ -1,0 +1,51 @@
+{
+  "nav": {
+    "links": {
+      "about": "ABOUT",
+      "books": "BOOKS",
+      "blog": "BLOG",
+      "portfolio": "PORTFOLIO",
+      "contact": "CONTACT"
+    }
+  },
+  "language": {
+    "select": "Select language",
+    "pt": "Portuguese",
+    "en": "English",
+    "fr": "French"
+  },
+  "hero": {
+    "greeting": "Hi, I am",
+    "role": "Full Stack Developer",
+    "description": "Passionate about creating innovative digital solutions and unique web experiences.",
+    "avatar": {
+      "alt": "Gabriel Rodrigues profile picture"
+    },
+    "facets": {
+      "dev": {
+        "leftTitle": "Developer",
+        "rightTitle": "Developer",
+        "leftDescription": "Specialized in full stack web development focusing on modern technologies",
+        "rightDescription": "Creating innovative solutions and unique digital experiences"
+      },
+      "dungeonMaster": {
+        "leftTitle": "Dungeon Master",
+        "rightTitle": "",
+        "leftDescription": "Narrating stories and creating fantastic worlds",
+        "rightDescription": "Developing leadership and narrative skills through RPG"
+      },
+      "forestFarmer": {
+        "leftTitle": "Forest Farmer",
+        "rightTitle": "",
+        "leftDescription": "Growing organic and sustainable food",
+        "rightDescription": "Connecting technology and nature for a better future"
+      },
+      "teamLeader": {
+        "leftTitle": "Team Leader",
+        "rightTitle": "Team Leader",
+        "leftDescription": "Guiding teams through challenging projects",
+        "rightDescription": "Promoting collaboration and professional growth"
+      }
+    }
+  }
+}

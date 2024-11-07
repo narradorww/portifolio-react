@@ -1,0 +1,33 @@
+{
+    "hero": {
+      "avatar": {
+        "alt": "Profile picture"
+      },
+      "facets": {
+        "dev": {
+          "leftTitle": null,
+          "rightTitle": "Software Development",
+          "leftDescription": "Architecting elegant and efficient solutions.",
+          "rightDescription": "Developing creative solutions with code."
+        },
+        "dungeonMaster": {
+          "leftTitle": null,
+          "rightTitle": "RPG",
+          "leftDescription": "Creating fantastic worlds and memorable stories.",
+          "rightDescription": "Guiding adventurers on epic journeys."
+        },
+        "forestFarmer": {
+          "leftTitle": null,
+          "rightTitle": "Agroforestry",
+          "leftDescription": "Cultivating environmental awareness.",
+          "rightDescription": "Promoting sustainability and connection with nature."
+        },
+        "teamLeader": {
+          "leftTitle": null,
+          "rightTitle": "Leadership",
+          "leftDescription": "Guiding teams towards success.",
+          "rightDescription": "Leading innovative projects with empathy and vision."
+        }
+      }
+    }
+  }

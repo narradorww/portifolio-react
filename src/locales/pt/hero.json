@@ -1,0 +1,33 @@
+
+{"hero": {
+    "avatar": {
+      "alt": "Foto de perfil"
+    },
+    "facets": {
+      "dev": {
+        "leftTitle": null,
+        "rightTitle": "Desenvolvimento de Software",
+        "leftDescription": "Arquitetando soluções elegantes e eficientes.",
+        "rightDescription": "Desenvolvendo soluções criativas com código."
+      },
+      "dungeonMaster": {
+        "leftTitle": null,
+        "rightTitle": "RPG",
+        "leftDescription": "Criando mundos fantásticos e histórias memoráveis.",
+        "rightDescription": "Guiando aventureiros em jornadas épicas."
+      },
+      "forestFarmer": {
+        "leftTitle": null,
+        "rightTitle": "Agrofloresta",
+        "leftDescription": "Cultivando consciência ambiental.",
+        "rightDescription": "Promovendo sustentabilidade e conexão com a natureza."
+      },
+      "teamLeader": {
+        "leftTitle": null,
+        "rightTitle": "Liderança",
+        "leftDescription": "Guiando equipes rumo ao sucesso.",
+        "rightDescription": "Liderando projetos inovadores com empatia e visão."
+      }
+    }
+  }
+}

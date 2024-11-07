@@ -1,31 +1,40 @@
 // src/components/common/Navbar/Navbar.tsx
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { AppBar, Toolbar, IconButton, Box, Typography, Avatar } from '@mui/material';
 import { GitHub, LinkedIn } from '@mui/icons-material';
+import { useTranslation } from 'react-i18next';
 import MediumIcon from '../Navbar/MediumIcon'; 
 import LanguageBalloon from '../LanguageBallon/LanguageBallon';
-import avatarImage from '../../../assets/images/avatar.jpeg'
+import avatarImage from '../../../assets/images/avatar.jpeg';
 
 interface NavLink {
-  title: string;
+  id: 'about' | 'books' | 'blog' | 'portfolio' | 'contact';
   href: string;
 }
 
 const navLinks: NavLink[] = [
-  { title: 'SOBRE', href: '/sobre' },
-  { title: 'LIVROS', href: '/livros' },
-  { title: 'BLOG', href: '/blog' },
-  { title: 'PORTFÓLIO', href: '/portfolio' },
-  { title: 'CONTATO', href: '/contato' },
+  { id: 'about', href: '/sobre' },
+  { id: 'books', href: '/livros' },
+  { id: 'blog', href: '/blog' },
+  { id: 'portfolio', href: '/portfolio' },
+  { id: 'contact', href: '/contato' },
 ];
 
 const Navbar: React.FC = () => {
-    const [currentLanguage, setCurrentLanguage] = useState('pt-BR');
+  const { t, i18n } = useTranslation();
+  const [currentLanguage, setCurrentLanguage] = useState(i18n.language);
 
   const handleLanguageChange = (languageCode: string) => {
     setCurrentLanguage(languageCode);
-    
+    i18n.changeLanguage(languageCode);
   };
+
+  const getTranslatedLink = (linkId: string) => {
+    const translationKey = `nav.links.${linkId}`;
+    return t(translationKey);
+  };
+
+
 
   return (
     <AppBar 
@@ -40,7 +49,6 @@ const Navbar: React.FC = () => {
         height: '80px',
         px: { xs: 2, md: 4 }
       }}>
-        {/* Avatar à esquerda */}
         <Box sx={{ 
           position: 'relative', 
           display: 'flex', 
@@ -68,17 +76,16 @@ const Navbar: React.FC = () => {
           </Box>
         </Box>
 
-
-        {/* Links de navegação centralizados */}
         <Box sx={{ 
           display: { xs: 'none', md: 'flex' },
           gap: 4,
           flex: 1,
-          justifyContent: 'center'
+          justifyContent: 'center',
+          ml: 8
         }}>
           {navLinks.map((link) => (
             <Typography
-              key={link.title}
+              key={link.id}
               component="a"
               href={link.href}
               sx={{
@@ -96,12 +103,11 @@ const Navbar: React.FC = () => {
                 }
               }}
             >
-              {link.title}
+              {getTranslatedLink(link.id)}
             </Typography>
           ))}
         </Box>
 
-        {/* Ícones de redes sociais */}
         <Box sx={{ 
           display: 'flex', 
           gap: 2

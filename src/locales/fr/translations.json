@@ -1,0 +1,51 @@
+{
+  "nav": {
+    "links": {
+      "about": "À PROPOS",
+      "books": "LIVRES",
+      "blog": "BLOG",
+      "portfolio": "PORTFOLIO",
+      "contact": "CONTACT"
+    }
+  },
+  "language": {
+    "select": "Sélectionnez la langue",
+    "pt": "Portugais",
+    "en": "Anglais",
+    "fr": "Français"
+  },
+  "hero": {
+    "greeting": "Bonjour, je suis",
+    "role": "Développeur Full Stack",
+    "description": "Passionné par la création de solutions numériques innovantes et d'expériences web uniques.",
+    "avatar": {
+      "alt": "Photo de profil de Gabriel Rodrigues"
+    },
+    "facets": {
+      "dev": {
+        "leftTitle": "Développeur",
+        "rightTitle": "Développeur",
+        "leftDescription": "Spécialisé dans le développement web full stack axé sur les technologies modernes",
+        "rightDescription": "Création de solutions innovantes et d'expériences numériques uniques"
+      },
+      "dungeonMaster": {
+        "leftTitle": "Maître du Donjon",
+        "rightTitle": "",
+        "leftDescription": "Narration d'histoires et création de mondes fantastiques",
+        "rightDescription": "Développement des compétences en leadership et en narration à travers le JDR"
+      },
+      "forestFarmer": {
+        "leftTitle": "Agriculteur Forestier",
+        "rightTitle": "",
+        "leftDescription": "Culture d'aliments biologiques et durables",
+        "rightDescription": "Connexion de la technologie et de la nature pour un meilleur avenir"
+      },
+      "teamLeader": {
+        "leftTitle": "Chef d'Équipe",
+        "rightTitle": "Chef d'Équipe",
+        "leftDescription": "Guide des équipes dans des projets stimulants",
+        "rightDescription": "Promotion de la collaboration et de la croissance professionnelle"
+      }
+    }
+  }
+}
