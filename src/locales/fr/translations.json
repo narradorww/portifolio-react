@@ -53,5 +53,26 @@
           "rightDescription": "Expert dans l'établissement et la direction de départements de développement logiciel, mettant en œuvre des méthodologies agiles et des outils modernes pour optimiser les processus et garantir des livraisons de haute qualité."
         }
       }
+    },
+    "recentProjects": {
+  "title": "Projets Récents",
+  "viewMore": "Voir plus",
+  "projects": {
+    "recicleLink": {
+      "title": "RecicleLink",
+      "description": "Plateforme primée au Hack for Change 2023 qui connecte les recycleurs aux matériaux recyclables en utilisant l'IA.",
+      "tags": ["React", "Node.js", "MongoDB", "IA"]
+    },
+    "rescueVision": {
+      "title": "Scooby Doo Où Es-Tu?",
+      "description": "Système de reconnaissance d'images pour le sauvetage d'animaux lors de catastrophes naturelles. Top 6 à l'AI Immersion Alura + Google.",
+      "tags": ["Python", "TensorFlow", "React"]
+    },
+    "logisticAI": {
+      "title": "Fretador App",
+      "description": "Plateforme de solutions logistiques intégrant Expéditeurs et Transporteurs avec la Technologie",
+      "tags": ["Machine Learning", "Node.js", "React", "MongoDB", "AWS"]
     }
+  }
+}
   }

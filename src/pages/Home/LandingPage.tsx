@@ -3,6 +3,7 @@ import React from 'react';
 import { Box} from '@mui/material';
 import Navbar from '../../components/common/Navbar/Navbar'
 import Hero from '../../components/sections/Hero/Hero';
+import RecentProjects from '../../components/sections/RecentProjects/RecentProjects';
 
 const NAVBAR_HEIGHT = 80;
 
@@ -37,7 +38,7 @@ const LandingPage: React.FC = () => {
           height: '55%', // restante da altura disponível
           bgcolor: '#D9D9D9'
         }}>
-          {/* Outras seções virão aqui */}
+         <RecentProjects />
         </Box>
       </Box>
 

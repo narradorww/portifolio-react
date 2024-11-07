@@ -53,5 +53,26 @@
           "rightDescription": "Expert in establishing and leading software development departments, implementing agile methodologies and modern tools to optimize processes and ensure high-quality deliveries."
         }
       }
+    },
+    "recentProjects": {
+  "title": "Recent Projects",
+  "viewMore": "View more",
+  "projects": {
+    "recicleLink": {
+      "title": "RecicleLink",
+      "description": "Award-winning platform at Hack for Change 2023 that connects recyclers to recyclable materials using AI.",
+      "tags": ["React", "Node.js", "MongoDB", "AI"]
+    },
+    "rescueVision": {
+      "title": "Scooby Doo Where Are You?",
+      "description": "Image recognition system for pet rescue in natural disasters. Top 6 at AI Immersion Alura + Google.",
+      "tags": ["Python", "TensorFlow", "React"]
+    },
+    "logisticAI": {
+      "title": "Fretador App",
+      "description": "Logistics solutions platform integrating Shippers and Freighters with Technology",
+      "tags": ["Machine Learning", "Node.js", "React", "MongoDB", "AWS"]
     }
+  }
+}
   }
