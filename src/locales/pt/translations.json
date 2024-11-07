@@ -16,8 +16,8 @@
     },
     "hero": {
       "greeting": "Olá, eu sou Rodrigo Alexandre",
-      "role": "Desenvolvedor Full Stack e Líder de Equipe",
-      "description": "Apaixonado por criar soluções digitais inovadoras e experiências únicas na web e mobile, com foco em sustentabilidade e tecnologia.",
+      "role": "Desenvolvedor Full Stack, Líder de Equipe e Inovador em IA",
+      "description": "Premiado desenvolvedor full stack com expertise em MERN Stack e Inteligência Artificial, combinando inovação tecnológica com impacto positivo.",
       "avatar": {
         "alt": "Foto de perfil de Rodrigo Alexandre"
       },
@@ -25,8 +25,14 @@
         "dev": {
           "leftTitle": "Desenvolvimento de Software",
           "rightTitle": "MERN Stack & Mobile",
-          "leftDescription": "Especializado em desenvolvimento web e mobile full stack com foco em tecnologias modernas, como React, Node.js e MongoDB.",
-          "rightDescription": "Criando soluções inovadoras e práticas, desde a prototipação até a implementação final."
+          "leftDescription": "Especialista em desenvolvimento full stack com domínio em React, Node.js, MongoDB e tecnologias mobile. Criando experiências digitais intuitivas e responsivas que transformam a maneira como as empresas operam.",
+          "rightDescription": "Desenvolvedor versátil com histórico comprovado em entregar soluções robustas em React Native, Next.js e toda stack MERN, sempre priorizando a experiência do usuário e a eficiência dos processos."
+        },
+        "iainovator": {
+          "leftTitle": "Inovador em IA",
+          "rightTitle": "Soluções Inteligentes",
+          "leftDescription": "Premiado desenvolvedor de soluções em IA, vencedor do Hack for Change 2023 com o RecicleLink e top 6 no AI Immersion da Alura + Google com reconhecimento de imagem para auxílio em desastres naturais.",
+          "rightDescription": "Especialista em implementação de modelos de machine learning para otimização de processos logísticos e sistemas inteligentes de cotação, unindo tecnologia avançada com impacto social positivo."
         },
         "dungeonMaster": {
           "leftTitle": "Mestre de RPG",
@@ -43,8 +49,8 @@
         "teamLeader": {
           "leftTitle": "Líder de Equipe",
           "rightTitle": "Desenvolvimento Colaborativo",
-          "leftDescription": "Guiando times de desenvolvedores em projetos desafiadores, promovendo colaboração e melhoria contínua.",
-          "rightDescription": "Liderando uma equipe de desenvolvedores e garantindo entregas de alta qualidade e valor."
+          "leftDescription": "Líder técnico com histórico comprovado em transformar startups através da inovação tecnológica. Expandindo equipes de 1 para 5 desenvolvedores e aumentando a base de clientes em 200% através de soluções estratégicas.",
+          "rightDescription": "Especialista em estabelecer e liderar departamentos de desenvolvimento de software, implementando metodologias ágeis e ferramentas modernas para otimizar processos e garantir entregas de alta qualidade."
         }
       }
     }

@@ -1,51 +1,57 @@
 {
-  "nav": {
-    "links": {
-      "about": "ABOUT",
-      "books": "BOOKS",
-      "blog": "BLOG",
-      "portfolio": "PORTFOLIO",
-      "contact": "CONTACT"
-    }
-  },
-  "language": {
-    "select": "Select language",
-    "pt": "Portuguese",
-    "en": "English",
-    "fr": "French"
-  },
-  "hero": {
-    "greeting": "Hi, I am",
-    "role": "Full Stack Developer",
-    "description": "Passionate about creating innovative digital solutions and unique web experiences.",
-    "avatar": {
-      "alt": "Gabriel Rodrigues profile picture"
+    "nav": {
+      "links": {
+        "about": "ABOUT",
+        "books": "BOOKS",
+        "blog": "BLOG",
+        "portfolio": "PORTFOLIO",
+        "contact": "CONTACT"
+      }
     },
-    "facets": {
-      "dev": {
-        "leftTitle": "Developer",
-        "rightTitle": "Developer",
-        "leftDescription": "Specialized in full stack web development focusing on modern technologies",
-        "rightDescription": "Creating innovative solutions and unique digital experiences"
+    "language": {
+      "select": "Select language",
+      "pt": "Portuguese",
+      "en": "English",
+      "fr": "French"
+    },
+    "hero": {
+      "greeting": "Hi, I'm Rodrigo Alexandre",
+      "role": "Full Stack Developer, Team Leader & AI Innovator",
+      "description": "Award-winning full stack developer with expertise in MERN Stack and Artificial Intelligence, combining technological innovation with positive impact.",
+      "avatar": {
+        "alt": "Rodrigo Alexandre's profile picture"
       },
-      "dungeonMaster": {
-        "leftTitle": "Dungeon Master",
-        "rightTitle": "",
-        "leftDescription": "Narrating stories and creating fantastic worlds",
-        "rightDescription": "Developing leadership and narrative skills through RPG"
-      },
-      "forestFarmer": {
-        "leftTitle": "Forest Farmer",
-        "rightTitle": "",
-        "leftDescription": "Growing organic and sustainable food",
-        "rightDescription": "Connecting technology and nature for a better future"
-      },
-      "teamLeader": {
-        "leftTitle": "Team Leader",
-        "rightTitle": "Team Leader",
-        "leftDescription": "Guiding teams through challenging projects",
-        "rightDescription": "Promoting collaboration and professional growth"
+      "facets": {
+        "dev": {
+          "leftTitle": "Software Development",
+          "rightTitle": "MERN Stack & Mobile",
+          "leftDescription": "Full stack development expert with mastery in React, Node.js, MongoDB, and mobile technologies. Creating intuitive and responsive digital experiences that transform how businesses operate.",
+          "rightDescription": "Versatile developer with proven track record in delivering robust solutions in React Native, Next.js, and the entire MERN stack, always prioritizing user experience and process efficiency."
+        },
+        "iainovator": {
+          "leftTitle": "AI Innovator",
+          "rightTitle": "Intelligent Solutions",
+          "leftDescription": "Award-winning AI solutions developer, winner of Hack for Change 2023 with RecicleLink and top 6 at AI Immersion by Alura + Google with image recognition for natural disaster aid.",
+          "rightDescription": "Specialist in implementing machine learning models for logistics process optimization and intelligent quotation systems, combining advanced technology with positive social impact."
+        },
+        "dungeonMaster": {
+          "leftTitle": "Dungeon Master",
+          "rightTitle": "World Creator",
+          "leftDescription": "Narrating stories in dystopian universes and exploring the impact of technology and humanity in fantastic worlds.",
+          "rightDescription": "Developing leadership skills, narrative, and collaborative creation through RPG."
+        },
+        "forestFarmer": {
+          "leftTitle": "Agroforester",
+          "rightTitle": "Sustainability & Nature",
+          "leftDescription": "Growing organic and sustainable food while applying sustainability practices.",
+          "rightDescription": "Uniting technology and nature towards a more sustainable and balanced future."
+        },
+        "teamLeader": {
+          "leftTitle": "Team Leader",
+          "rightTitle": "Collaborative Development",
+          "leftDescription": "Technical leader with proven track record in transforming startups through technological innovation. Expanding teams from 1 to 5 developers and increasing client base by 200% through strategic solutions.",
+          "rightDescription": "Expert in establishing and leading software development departments, implementing agile methodologies and modern tools to optimize processes and ensure high-quality deliveries."
+        }
       }
     }
   }
-}

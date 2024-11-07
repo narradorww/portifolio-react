@@ -1,51 +1,57 @@
 {
-  "nav": {
-    "links": {
-      "about": "À PROPOS",
-      "books": "LIVRES",
-      "blog": "BLOG",
-      "portfolio": "PORTFOLIO",
-      "contact": "CONTACT"
-    }
-  },
-  "language": {
-    "select": "Sélectionnez la langue",
-    "pt": "Portugais",
-    "en": "Anglais",
-    "fr": "Français"
-  },
-  "hero": {
-    "greeting": "Bonjour, je suis",
-    "role": "Développeur Full Stack",
-    "description": "Passionné par la création de solutions numériques innovantes et d'expériences web uniques.",
-    "avatar": {
-      "alt": "Photo de profil de Gabriel Rodrigues"
+    "nav": {
+      "links": {
+        "about": "À PROPOS",
+        "books": "LIVRES",
+        "blog": "BLOG",
+        "portfolio": "PORTFOLIO",
+        "contact": "CONTACT"
+      }
     },
-    "facets": {
-      "dev": {
-        "leftTitle": "Développeur",
-        "rightTitle": "Développeur",
-        "leftDescription": "Spécialisé dans le développement web full stack axé sur les technologies modernes",
-        "rightDescription": "Création de solutions innovantes et d'expériences numériques uniques"
+    "language": {
+      "select": "Sélectionnez la langue",
+      "pt": "Portugais",
+      "en": "Anglais",
+      "fr": "Français"
+    },
+    "hero": {
+      "greeting": "Bonjour, je suis Rodrigo Alexandre",
+      "role": "Développeur Full Stack, Chef d'Équipe et Innovateur en IA",
+      "description": "Développeur full stack primé, expert en MERN Stack et en Intelligence Artificielle, alliant innovation technologique et impact positif.",
+      "avatar": {
+        "alt": "Photo de profil de Rodrigo Alexandre"
       },
-      "dungeonMaster": {
-        "leftTitle": "Maître du Donjon",
-        "rightTitle": "",
-        "leftDescription": "Narration d'histoires et création de mondes fantastiques",
-        "rightDescription": "Développement des compétences en leadership et en narration à travers le JDR"
-      },
-      "forestFarmer": {
-        "leftTitle": "Agriculteur Forestier",
-        "rightTitle": "",
-        "leftDescription": "Culture d'aliments biologiques et durables",
-        "rightDescription": "Connexion de la technologie et de la nature pour un meilleur avenir"
-      },
-      "teamLeader": {
-        "leftTitle": "Chef d'Équipe",
-        "rightTitle": "Chef d'Équipe",
-        "leftDescription": "Guide des équipes dans des projets stimulants",
-        "rightDescription": "Promotion de la collaboration et de la croissance professionnelle"
+      "facets": {
+        "dev": {
+          "leftTitle": "Développement Logiciel",
+          "rightTitle": "MERN Stack & Mobile",
+          "leftDescription": "Expert en développement full stack maîtrisant React, Node.js, MongoDB et les technologies mobiles. Création d'expériences numériques intuitives et réactives qui transforment le fonctionnement des entreprises.",
+          "rightDescription": "Développeur polyvalent avec une expérience éprouvée dans la création de solutions robustes en React Native, Next.js et toute la stack MERN, privilégiant toujours l'expérience utilisateur et l'efficacité des processus."
+        },
+        "iainovator": {
+          "leftTitle": "Innovateur en IA",
+          "rightTitle": "Solutions Intelligentes",
+          "leftDescription": "Développeur de solutions IA primé, vainqueur du Hack for Change 2023 avec RecicleLink et top 6 à l'AI Immersion d'Alura + Google avec la reconnaissance d'images pour l'aide aux catastrophes naturelles.",
+          "rightDescription": "Spécialiste de l'implémentation de modèles de machine learning pour l'optimisation des processus logistiques et des systèmes de cotation intelligents, alliant technologie avancée et impact social positif."
+        },
+        "dungeonMaster": {
+          "leftTitle": "Maître de Jeu",
+          "rightTitle": "Créateur de Mondes",
+          "leftDescription": "Narration d'histoires dans des univers dystopiques et exploration de l'impact de la technologie et de l'humanité dans des mondes fantastiques.",
+          "rightDescription": "Développement des compétences en leadership, narration et création collaborative à travers le JDR."
+        },
+        "forestFarmer": {
+          "leftTitle": "Agroforestier",
+          "rightTitle": "Durabilité & Nature",
+          "leftDescription": "Culture d'aliments biologiques et durables et application de pratiques de développement durable.",
+          "rightDescription": "Union de la technologie et de la nature pour un avenir plus durable et équilibré."
+        },
+        "teamLeader": {
+          "leftTitle": "Chef d'Équipe",
+          "rightTitle": "Développement Collaboratif",
+          "leftDescription": "Leader technique avec un historique prouvé dans la transformation des startups par l'innovation technologique. Expansion des équipes de 1 à 5 développeurs et augmentation de la base client de 200% grâce à des solutions stratégiques.",
+          "rightDescription": "Expert dans l'établissement et la direction de départements de développement logiciel, mettant en œuvre des méthodologies agiles et des outils modernes pour optimiser les processus et garantir des livraisons de haute qualité."
+        }
       }
     }
   }
-}

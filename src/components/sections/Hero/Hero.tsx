@@ -8,8 +8,9 @@ import devImage from '../../../assets/images/dev.png';
 import dungeonMasterImage from '../../../assets/images/dungeon-master.png';
 import forestFarmerImage from '../../../assets/images/forestfarmer.png';
 import teamLeaderImage from '../../../assets/images/team-leader.png';
+import iaInovatorImage from '../../../assets/images/Awards1.png';
 
-type FacetId = 'dev' | 'dungeonMaster' | 'forestFarmer' | 'teamLeader';
+type FacetId = 'dev' | 'dungeonMaster' | 'forestFarmer' | 'teamLeader' | 'iainovator';
 
 interface Facet {
   id: FacetId;
@@ -20,7 +21,8 @@ const facets: readonly Facet[] = [
   { id: 'dev', image: devImage },
   { id: 'dungeonMaster', image: dungeonMasterImage },
   { id: 'forestFarmer', image: forestFarmerImage },
-  { id: 'teamLeader', image: teamLeaderImage }
+  { id: 'teamLeader', image: teamLeaderImage },
+  { id: 'iainovator', image: iaInovatorImage}
 ] as const;
 
 const orbitAnimation = keyframes`
@@ -286,7 +288,7 @@ const Hero: React.FC = () => {
                   overflow: 'hidden',
                   border: '3px solid #000000',
                   boxShadow: '0 0 30px rgba(0, 0, 0, 0.2)',
-                  bgcolor: '#000000',
+                  bgcolor: '#F7DE9A',
                   transition: 'all 0.5s ease-in-out',
                   animation: `${fadeImage} 0.5s ease-in-out`,
                   '&:hover': {
@@ -380,15 +382,15 @@ const Hero: React.FC = () => {
                 animation: `${fadeIn} 1s ease forwards`,
                 maxWidth: '600px',
                 zIndex: 2,
-                mt: 2,
+                mt: 0,
               }}
             >
               <Typography
                 sx={{
                   fontFamily: 'Michroma, sans-serif',
-                  fontSize: '2rem',
+                  fontSize: '1.4rem',
                   color: '#000000',
-                  mb: 2,
+                  mb: 1,
                   fontWeight: 500,
                 }}
               >
